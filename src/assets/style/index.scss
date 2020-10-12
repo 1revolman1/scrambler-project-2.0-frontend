@@ -1,0 +1,69 @@
+// @import "../fonts/Gilroy Light/font.css";
+// @import "../fonts/Gilroy Bold/font.css";
+// @import "../fonts/Gilroy Medium/font.css";
+// @import "../fonts/Gilroy Heavy/style.css";
+// @import "../fonts/Gilroy Regular/font.css";
+@import "../fonts/Gilroy/stylesheet.css";
+
+@import "./normalize.scss", "./burger.scss";
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap");
+// https://onlinefontconverter.com/
+
+#root {
+  min-height: 100vh;
+  background: #e5e5e5;
+}
+
+h1 {
+  font-family: "Gilroy", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36.491px;
+  line-height: 36px;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+  color: #000000;
+}
+h2 {
+  font-family: "Gilroy", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32.437px;
+  line-height: 41px;
+  letter-spacing: 0.005em;
+}
+h3 {
+  font-family: "Gilroy", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28.833px;
+  line-height: 41px;
+  color: #000000;
+}
+h4 {
+  font-family: "Gilroy", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25.629px;
+  line-height: 26px;
+  letter-spacing: -0.25px;
+  color: #333333;
+}
+h5 {
+  font-family: "Gilroy", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22.781px;
+  line-height: 20px;
+  letter-spacing: -0.001em;
+  color: #000000;
+}
+h6 {
+  font-family: "Gilroy", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20.25px;
+  line-height: 20px;
+  letter-spacing: 0.015em;
+  color: #000000;
+}

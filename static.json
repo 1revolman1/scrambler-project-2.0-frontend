@@ -1,0 +1,12 @@
+{
+  "root": "build/",
+  "routes": {
+    "/**": "index.html"
+  },
+  "https_only": true,
+  "proxies": {
+    "/toBACKEND/": {
+      "origin": "${BACKEND_URL}"
+    }
+  }
+}
