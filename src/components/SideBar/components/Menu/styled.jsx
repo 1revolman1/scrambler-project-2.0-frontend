@@ -6,7 +6,7 @@ export const StyledSideNav = styled.nav`
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 10; /* Stay on top */
-  top: 94px; /* Stay at the top */
+  top: 89px; /* Stay at the top */
   left: 0;
   background: #ffffff;
   border: 1px solid #dcdcdc;
@@ -16,9 +16,7 @@ export const StyledSideNav = styled.nav`
   overflow: auto;
   /* overflow-y: auto; */
   padding-bottom: 100px !important;
-  @media screen and (max-width: 1100px) {
-    top: 89px;
-  }
+ 
   @media screen and (max-width: 426px) {
     top: 69px;
   }
@@ -123,7 +121,7 @@ export const StyledNavLinks = styled(NavLink)`
     opacity: 0.3;
   }
   &.selected {
-    background: #0e4afb;
+    background: var(--main-active-color);
     pointer-events: none;
     box-shadow: -2px 5px 7px rgba(14, 74, 251, 0.13);
     border-radius: 4px;
@@ -133,13 +131,25 @@ export const StyledNavLinks = styled(NavLink)`
       opacity: 1;
     }
     svg {
+      &[data-type="torrent"]{
+        path{
+          fill: white !important;
+        }
+      }
       path {
-        fill: transparent;
-        stroke: white;
+        fill: transparent !important;
+        stroke: white !important;
       }
     }
   }
   svg {
+    height: auto;
+    width: 100%;
+    @media screen and (max-width:1100px){
+      width:initial;
+      height:initial;
+      max-width:24px;
+    }
     transition: all 0.3s linear;
     margin-right: 36px;
     path {

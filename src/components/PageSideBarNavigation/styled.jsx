@@ -33,7 +33,7 @@ export const StyledNavLink = styled(NavLink)`
     /* margin-right: 0; */
   }
   &.active-button {
-    background: #0e4afb;
+    background: var(--main-active-color);
     color: #ffffff;
     @media screen and (min-width: 1101px) {
       pointer-events: none;

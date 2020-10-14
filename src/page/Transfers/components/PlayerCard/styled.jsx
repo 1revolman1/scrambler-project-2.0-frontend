@@ -38,7 +38,7 @@ export const StyledPlayerCard = styled.div`
     if (selectPlayer) {
       return css`
         &.data-${selectPlayer} {
-          background: #0e4afb;
+          background: var(--main-active-color);
           > h5 {
             color: white;
           }

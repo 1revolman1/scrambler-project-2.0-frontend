@@ -15,9 +15,9 @@ export const StyledRightSideBlock = styled.aside`
   overflow: auto;
   position: fixed;
   z-index: 9;
-  max-height: calc(100vh - 94px);
+  max-height: calc(100vh - 89px);
   overflow: auto;
-  top: 94px;
+  top: 89px;
   height: 100%;
   transition: all 0.5s, opacity 0.3s;
   border: 1px solid #dcdcdc;
@@ -26,9 +26,7 @@ export const StyledRightSideBlock = styled.aside`
   h4 {
     margin-right: 20px;
   }
-  @media screen and (max-width: 1100px) {
-    top: 89px;
-  }
+
   @media screen and (max-width: 426px) {
     padding: 34px 24px 0 17px;
     top: 69px;

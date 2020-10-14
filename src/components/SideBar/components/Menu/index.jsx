@@ -1,6 +1,7 @@
 import React from "react";
 import { ReactComponent as Lobby } from "../../assets/Lobby.svg";
 import { ReactComponent as Team } from "../../assets/Team.svg";
+import { ReactComponent as Torrent } from "../../assets/Torrent1.svg";
 import { ReactComponent as Arrow } from "../../../../assets/img/SimpleArrow.svg";
 import { StyledSideNav, StyledSummary, StyledNavLinks } from "./styled";
 
@@ -45,7 +46,7 @@ export default React.memo(function Menu({
         href="#"
         data-content="Torrent"
       >
-        <Team />
+        <Torrent data-type="torrent"/>
         <span>Torrent</span>
       </StyledNavLinks>
     </StyledSideNav>

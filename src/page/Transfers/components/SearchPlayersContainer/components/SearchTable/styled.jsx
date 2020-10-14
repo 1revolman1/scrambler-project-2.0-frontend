@@ -177,7 +177,7 @@ export const StyledTrTd = styled.tr`
   ${({ clicked }) => {
     return css`
       &.row-number-${clicked} {
-        background: #0e4afb;
+        background: var(--main-active-color);
         * {
           color: #ffffff;
         }

@@ -11,12 +11,12 @@ export const StyledCross = styled(Cross)`
 `;
 export const StyledRightBlock = styled.aside`
   padding: 50px 20px 100px 20px;
-  max-height: calc(100vh - 94px);
+  max-height: calc(100vh - 89px);
   z-index: 9;
   overflow: auto;
   position: fixed;
   right: 0;
-  top: 94px;
+  top: 89px;
   height: 100%;
   background: #ffffff;
   border: 1px solid #dcdcdc;
