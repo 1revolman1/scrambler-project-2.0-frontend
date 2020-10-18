@@ -11,14 +11,11 @@ import {
   sidebarOpenLeftPanel,
   sidebarOpenRightPanel,
   sidebarOpenSideNavigation,
-  sidebarGetDataForSideBar,
 } from "../../redux/actions/Sidebar";
 import {
   isLeftPanelOpen,
   isRightPanelOpen,
   isSideNavOpen,
-  isLoaded,
-  dataForSidebar,
 } from "../../redux/selector/Sidebar";
 
 //https://www.w3schools.com/howto/howto_js_sidenav.asp
@@ -30,9 +27,7 @@ function SideBar({ children }) {
   const dispatch = useDispatch();
   const isRightOpen = useSelector(isRightPanelOpen);
   const isLeftOpen = useSelector(isLeftPanelOpen);
-  const isLoad = useSelector(isLoaded);
   const isSideOpen = useSelector(isSideNavOpen);
-  const data = useSelector(dataForSidebar);
   //REDUX
   const location = useLocation();
 
@@ -54,10 +49,8 @@ function SideBar({ children }) {
     dispatch(sidebarOpenRightPanel(false));
     dispatch(sidebarOpenLeftPanel(false));
   };
+
   useEffect(() => {
-    if (!data.cash && !data.ranking) {
-      dispatch(sidebarGetDataForSideBar());
-    }
     window.addEventListener("resize", resizeFunction);
     return () => window.removeEventListener("resize", resizeFunction);
   }, []);
@@ -96,41 +89,35 @@ function SideBar({ children }) {
         dispatch(sidebarOpenSideNavigation(false));
     }
   }, [location]);
-  if (isLoad) {
-    return (
-      <StyledContainerLoader>
-        <StyledLoader type="Bars" color="#00BFFF" height={100} width={100} />
-      </StyledContainerLoader>
-    );
-  } else
-    return (
-      <>
-        <Header
-          location={location}
-          onClick={openSideNav}
-          openleftpanel={openLeftPanel}
-        />
-        <Menu
-          isSideOpen={isSideOpen}
-          isOnMain={isOnMain}
-          isLeftOpen={isLeftOpen}
-          openLeftPanel={openLeftPanel}
-        />
-        <LeftSideBlock leftPanel={isLeftOpen} openLeftPanel={openLeftPanel} />
-        <StyledMain
-          data-right={isRightOpen}
-          data-left={isLeftOpen}
-          data-sideopen={isSideOpen}
-        >
-          {children}
-        </StyledMain>
-        <RightSideBlock
-          isRightOpen={isRightOpen}
-          sidebarOpenRightPanel={(state) => {
-            dispatch(sidebarOpenRightPanel(state));
-          }}
-        />
-      </>
-    );
+
+  return (
+    <>
+      <Header
+        location={location}
+        onClick={openSideNav}
+        openleftpanel={openLeftPanel}
+      />
+      <Menu
+        isSideOpen={isSideOpen}
+        isOnMain={isOnMain}
+        isLeftOpen={isLeftOpen}
+        openLeftPanel={openLeftPanel}
+      />
+      <LeftSideBlock leftPanel={isLeftOpen} openLeftPanel={openLeftPanel} />
+      <StyledMain
+        data-right={isRightOpen}
+        data-left={isLeftOpen}
+        data-sideopen={isSideOpen}
+      >
+        {children}
+      </StyledMain>
+      <RightSideBlock
+        isRightOpen={isRightOpen}
+        sidebarOpenRightPanel={(state) => {
+          dispatch(sidebarOpenRightPanel(state));
+        }}
+      />
+    </>
+  );
 }
 export default React.memo(SideBar);

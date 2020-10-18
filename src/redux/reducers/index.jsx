@@ -1,11 +1,8 @@
 import { combineReducers } from "redux";
-
-import { counter } from "./Counter";
+import { home } from "./Home";
 import { sidebar } from "./Sidebar";
-import { transfers } from "./Transfers";
 
 export const rootReducer = combineReducers({
-  counter,
+  home,
   sidebar,
-  transfers,
 });
